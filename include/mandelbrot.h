@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelblot.c                                       :+:      :+:    :+:   */
+/*   mandelbrot.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 22:19:47 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/03/22 22:21:44 by sshimizu         ###   ########.fr       */
+/*   Created: 2023/03/24 21:35:57 by sshimizu          #+#    #+#             */
+/*   Updated: 2023/03/26 20:42:07 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_complex.h>
+#ifndef MANDELBROT_H
+# define MANDELBROT_H
 
-int	mandelblot(t_complex c, int n)
-{
-	t_complex	z;
-	int			repeat;
+# include <ft_complex.h>
+# include <mlx_utils.h>
 
-	repeat = 0;
-	z = c;
-	while (repeat < n)
-	{
-		z = sum_complex(square_complex(z), c);
-		if (abs_complex(z) > 2.0)
-			return (repeat);
-		repeat++;
-	}
-	return (repeat);
-}
+int	mandelbrot_depth(t_display disp, int x, int y, int max_depth);
+
+#endif

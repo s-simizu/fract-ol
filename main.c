@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:12:07 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/03/22 23:19:12 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/03/24 21:31:37 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,4 @@
 
 int	main(void)
 {
-	void		*mlx;
-	void		*mlx_win;
-	t_imginfo	img;
-
-    
 }

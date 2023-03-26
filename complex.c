@@ -6,23 +6,23 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:26:58 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/03/22 22:21:25 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/03/26 20:38:14 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_complex.h>
 #include <math.h>
 
-t_complex	create_complex(double r, double i)
+t_complex	new_complex(double re, double im)
 {
 	t_complex	c;
 
-	c.re = r;
-	c.im = i;
+	c.re = re;
+	c.im = im;
 	return (c);
 }
 
-t_complex	sum_complex(t_complex c1, t_complex c2)
+t_complex	complex_sum(t_complex c1, t_complex c2)
 {
 	t_complex	result;
 
@@ -31,7 +31,7 @@ t_complex	sum_complex(t_complex c1, t_complex c2)
 	return (result);
 }
 
-t_complex	multiply_complex(t_complex c1, t_complex c2)
+t_complex	complex_multiply(t_complex c1, t_complex c2)
 {
 	t_complex	result;
 
@@ -40,12 +40,12 @@ t_complex	multiply_complex(t_complex c1, t_complex c2)
 	return (result);
 }
 
-t_complex	square_complex(t_complex c)
+t_complex	complex_square(t_complex c)
 {
-	return (multiply_complex(c, c));
+	return (complex_multiply(c, c));
 }
 
-double	abs_complex(t_complex c)
+double	complex_abs(t_complex c)
 {
 	return (sqrt(c.re * c.re + c.im * c.im));
 }
