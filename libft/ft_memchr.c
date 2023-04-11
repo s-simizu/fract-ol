@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_complex.h                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 18:25:14 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/11 11:13:53 by sshimizu         ###   ########.fr       */
+/*   Created: 2023/01/11 19:01:13 by sshimizu          #+#    #+#             */
+/*   Updated: 2023/01/15 08:45:32 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_COMPLEX_H
-# define FT_COMPLEX_H
+#include "libft.h"
 
-typedef struct s_complex
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	double	re;
-	double	im;
-}			t_complex;
+	unsigned char	*us;
+	unsigned char	uc;
+	size_t			i;
 
-t_complex	complex_sum(t_complex c1, t_complex c2);
-t_complex	complex_multiply(t_complex c1, t_complex c2);
-t_complex	complex_pow(t_complex c, unsigned int exp);
-double		complex_abs(t_complex c);
-
-#endif
+	us = (unsigned char *)s;
+	uc = (unsigned char)c;
+	i = 0;
+	while (i < n)
+	{
+		if (us[i] == uc)
+			return ((void *)(us + i));
+		i++;
+	}
+	return (NULL);
+}

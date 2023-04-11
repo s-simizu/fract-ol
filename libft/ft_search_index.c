@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_complex.h                                       :+:      :+:    :+:   */
+/*   ft_search_index.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 18:25:14 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/11 11:13:53 by sshimizu         ###   ########.fr       */
+/*   Created: 2023/02/21 19:12:04 by sshimizu          #+#    #+#             */
+/*   Updated: 2023/02/21 19:16:14 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_COMPLEX_H
-# define FT_COMPLEX_H
-
-typedef struct s_complex
+int	ft_search_index(int val, int *array, int size)
 {
-	double	re;
-	double	im;
-}			t_complex;
+	int	i;
 
-t_complex	complex_sum(t_complex c1, t_complex c2);
-t_complex	complex_multiply(t_complex c1, t_complex c2);
-t_complex	complex_pow(t_complex c, unsigned int exp);
-double		complex_abs(t_complex c);
-
-#endif
+	i = 0;
+	while (i < size)
+	{
+		if (array[i] == val)
+			return (i);
+		i++;
+	}
+	return (-1);
+}

@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_complex.h                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 18:25:14 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/11 11:13:53 by sshimizu         ###   ########.fr       */
+/*   Created: 2023/01/11 23:44:07 by sshimizu          #+#    #+#             */
+/*   Updated: 2023/01/11 23:55:59 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_COMPLEX_H
-# define FT_COMPLEX_H
+#include "libft.h"
 
-typedef struct s_complex
+char	*ft_strdup(const char *s1)
 {
-	double	re;
-	double	im;
-}			t_complex;
+	size_t	len;
+	char	*s;
 
-t_complex	complex_sum(t_complex c1, t_complex c2);
-t_complex	complex_multiply(t_complex c1, t_complex c2);
-t_complex	complex_pow(t_complex c, unsigned int exp);
-double		complex_abs(t_complex c);
+	len = ft_strlen(s1);
+	s = malloc(sizeof(char) * (len + 1));
+	if (s == NULL)
+		return (NULL);
+	ft_strlcpy(s, s1, len + 1);
+	return (s);
+}
 
-#endif
+// #include <stdio.h>
+// #include <string.h>
+// int	main(void)
+// {
+// 	printf("%s\n", ft_strdup("aiueo"));
+// }

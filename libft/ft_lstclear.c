@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_complex.h                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 18:25:14 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/11 11:13:53 by sshimizu         ###   ########.fr       */
+/*   Created: 2023/01/14 02:53:56 by sshimizu          #+#    #+#             */
+/*   Updated: 2023/01/16 01:41:06 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_COMPLEX_H
-# define FT_COMPLEX_H
+#include "libft.h"
 
-typedef struct s_complex
+static void	delall(t_list *lst, void (*del)(void *))
 {
-	double	re;
-	double	im;
-}			t_complex;
+	if (lst == NULL)
+		return ;
+	delall(lst->next, del);
+	ft_lstdelone(lst, del);
+}
 
-t_complex	complex_sum(t_complex c1, t_complex c2);
-t_complex	complex_multiply(t_complex c1, t_complex c2);
-t_complex	complex_pow(t_complex c, unsigned int exp);
-double		complex_abs(t_complex c);
-
-#endif
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	if (lst == NULL || del == NULL)
+		return ;
+	delall(*lst, del);
+	*lst = NULL;
+}

@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_complex.h                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 18:25:14 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/11 11:13:53 by sshimizu         ###   ########.fr       */
+/*   Created: 2023/01/11 03:47:09 by sshimizu          #+#    #+#             */
+/*   Updated: 2023/01/15 04:17:11 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_COMPLEX_H
-# define FT_COMPLEX_H
+#include "libft.h"
 
-typedef struct s_complex
+void	*ft_memcpy(void *buf1, const void *buf2, size_t n)
 {
-	double	re;
-	double	im;
-}			t_complex;
+	unsigned char	*b1;
+	unsigned char	*b2;
+	size_t			i;
 
-t_complex	complex_sum(t_complex c1, t_complex c2);
-t_complex	complex_multiply(t_complex c1, t_complex c2);
-t_complex	complex_pow(t_complex c, unsigned int exp);
-double		complex_abs(t_complex c);
-
-#endif
+	b1 = (unsigned char *)buf1;
+	b2 = (unsigned char *)buf2;
+	i = 0;
+	while (i < n)
+	{
+		b1[i] = b2[i];
+		i++;
+	}
+	return ((void *)b1);
+}

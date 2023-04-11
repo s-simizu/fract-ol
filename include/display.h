@@ -1,22 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.h                                       :+:      :+:    :+:   */
+/*   display.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/24 21:35:57 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/11 03:48:11 by sshimizu         ###   ########.fr       */
+/*   Created: 2023/03/26 20:52:16 by sshimizu          #+#    #+#             */
+/*   Updated: 2023/04/11 06:34:42 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MANDELBROT_H
-# define MANDELBROT_H
+#ifndef DISPLAY_H
+# define DISPLAY_H
 
 # include <ft_complex.h>
-# include <mlx_utils.h>
 
-t_complex	point_to_complex(t_display *disp, int x, int y);
-int			mandelbrot_depth(t_display *disp, int x, int y, int max_depth);
+typedef struct s_imginfo
+{
+	void		*img;
+	char		*addr;
+	int			bits_per_pixel;
+	int			size_line;
+	int			endian;
+}				t_imginfo;
+
+typedef struct s_display
+{
+	void		*mlx;
+	void		*win;
+	t_imginfo	imginfo;
+	int			width;
+	int			height;
+	double		zoom_level;
+	t_complex	center;
+}				t_display;
+
+void			init_display(t_display *disp, int width, int height);
+void			destroy_display(t_display *disp);
 
 #endif
