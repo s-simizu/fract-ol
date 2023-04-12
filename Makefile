@@ -6,7 +6,7 @@
 #    By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 10:46:37 by sshimizu          #+#    #+#              #
-#    Updated: 2023/04/13 01:44:46 by sshimizu         ###   ########.fr        #
+#    Updated: 2023/04/13 02:07:22 by sshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
 INCLUDE = -Iinclude -Ilibft -Imlx -I/usr/X11/include
 LIB = -Llibft -lft -lm -Lmlx -lmlx_Darwin -L/usr/X11/lib -lX11 -lXext
 FLAMEWORK = -framework OpenGL -framework AppKit
+MLX_DIR = mlx/
+MLX = libmlx_Darwin.a
 LIBFT_DIR = libft/
 LIBFT = libft.a
 
@@ -27,8 +29,11 @@ VPATH = libft include mlx src
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(LIBFT)
+$(NAME): $(OBJS) $(MLX) $(LIBFT)
 	$(CC) $(CFLAGS) $(LIB) $(FLAMEWORK) $(OBJS) $(LIBFT_DIR)$(LIBFT) -o $@
+
+$(MLX):
+	$(MAKE) -C $(MLX_DIR)
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
@@ -48,6 +53,7 @@ move.c: display.h draw.h
 zoom.c: draw.h ft_complex.h
 
 clean:
+	$(MAKE) clean -C $(MLX_DIR)
 	$(MAKE) fclean -C $(LIBFT_DIR)
 	rm -f $(OBJS)
 
