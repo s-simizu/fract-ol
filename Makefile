@@ -6,7 +6,7 @@
 #    By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 10:46:37 by sshimizu          #+#    #+#              #
-#    Updated: 2023/04/12 16:06:11 by sshimizu         ###   ########.fr        #
+#    Updated: 2023/04/12 21:00:09 by sshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ LIB = -Llibft -lft -lm -Lmlx -lmlx_Darwin -L/usr/X11/lib -lX11 -lXext
 FLAMEWORK = -framework OpenGL -framework AppKit
 LIBFT = libft.a
 
-SRCS = complex.c display.c draw.c event.c main.c mandelbrot.c mlx_utils.c move.c zoom.c
+SRCS = calc.c color.c complex.c display.c draw.c event.c main.c mlx_utils.c move.c zoom.c
 OBJS = $(SRCS:.c=.o)
 
 VPATH = libft include mlx src
@@ -34,7 +34,7 @@ $(NAME): $(OBJS) $(LIBFT)
 
 complex.c: ft_complex.h
 display.c: display.h ft_complex.h libft.h mlx.h
-draw.c: display.h mandelbrot.h mlx.h mlx_utils.h
+draw.c: calc.c color.h display.h fractal.h mlx.h mlx_utils.h
 event.c: display.h move.h zoom.h
 main.c: display.h event.h fractal.h mlx.h mlx_utils.h
 mandelbrot.c: ft_complex.h mlx_utils.h

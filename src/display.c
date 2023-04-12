@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:47:39 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/12 16:17:14 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/12 21:37:45 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 
 #define WIDTH 500
 #define HEIGHT 300
+#define INITIAL_MAX_DEPTH 100
+#define INITIAL_ZOOM_LEVEL 1.0
 #define DEFAULT_CENTER_RE -0.5
 #define DEFAULT_CENTER_IM 0.0
 
@@ -39,7 +41,7 @@ void	init_display(t_display *disp)
 	disp->mlx = mlx_init();
 	if (!disp->mlx)
 		destroy_display(disp);
-	disp->win = mlx_new_window(disp->mlx, WIDTH, HEIGHT, "fractal");
+	disp->win = mlx_new_window(disp->mlx, WIDTH, HEIGHT, "fract-ol");
 	if (!disp->win)
 		destroy_display(disp);
 	disp->imginfo.img = mlx_new_image(disp->mlx, WIDTH, HEIGHT);
@@ -50,6 +52,7 @@ void	init_display(t_display *disp)
 			&disp->imginfo.endian);
 	disp->width = WIDTH;
 	disp->height = HEIGHT;
-	disp->zoom_level = 1.0;
+	disp->max_depth = INITIAL_MAX_DEPTH;
+	disp->zoom_level = INITIAL_ZOOM_LEVEL;
 	disp->center = (t_complex){DEFAULT_CENTER_RE, DEFAULT_CENTER_IM};
 }

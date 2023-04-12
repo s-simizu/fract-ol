@@ -6,13 +6,14 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:52:16 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/12 15:37:03 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/12 21:22:17 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DISPLAY_H
 # define DISPLAY_H
 
+# include <color.h>
 # include <fractal.h>
 # include <ft_complex.h>
 
@@ -32,9 +33,12 @@ typedef struct s_display
 	t_imginfo	imginfo;
 	int			width;
 	int			height;
+	int			max_depth;
 	double		zoom_level;
 	t_complex	center;
 	t_fractal	fractal;
+	t_complex	julia_param;
+	t_color		color;
 }				t_display;
 
 void			init_display(t_display *disp);

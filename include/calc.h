@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fractal.h                                          :+:      :+:    :+:   */
+/*   calc.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 13:27:30 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/12 19:56:07 by sshimizu         ###   ########.fr       */
+/*   Created: 2023/04/12 19:38:18 by sshimizu          #+#    #+#             */
+/*   Updated: 2023/04/12 19:55:39 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRACTAL_H
-# define FRACTAL_H
+#ifndef CALC_H
+# define CALC_H
 
-typedef enum e_fractal
-{
-	JULIA,
-	MANDELBROT,
-	BURNING
-}			t_fractal;
+# include <ft_complex.h>
+
+int	calc_depth(t_complex z, t_complex c, int max_depth);
+int	calc_depth_burning_ship(t_complex z, t_complex c, int max_depth);
 
 #endif

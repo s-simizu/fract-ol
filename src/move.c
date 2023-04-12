@@ -6,14 +6,14 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:59:02 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/12 16:26:48 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:41:05 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <display.h>
 #include <draw.h>
 
-#define DEFAULT_MOVE_AMOUNT 0.1
+#define DEFAULT_MOVE_AMOUNT 0.2
 
 void	move_up(t_display *disp)
 {
