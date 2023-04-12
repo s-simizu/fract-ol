@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 22:19:47 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/11 11:08:11 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/12 10:54:42 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,11 @@
 #define DEFAULT_RE_RANGE 4.0
 #define DEFAULT_IM_RANGE 2.4
 
-static bool	is_convergent(t_complex c)
-{
-	return (c.re >= -0.5 && c.re <= 0.2 && c.im >= -0.5 && c.im <= 0.5);
-}
-
 static int	escape_count(t_complex c, int max_loop)
 {
 	t_complex	z;
 	int			loop;
 
-	if (is_convergent(c))
-		return (max_loop);
 	z = (t_complex){0, 0};
 	loop = 0;
 	while (loop < max_loop)
