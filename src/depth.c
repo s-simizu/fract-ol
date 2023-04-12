@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc.c                                             :+:      :+:    :+:   */
+/*   depth.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 16:51:38 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/12 19:59:36 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/12 23:12:15 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_complex.h>
 #include <math.h>
 
-int	calc_depth(t_complex z, t_complex c, int max_depth)
+int	depth(t_complex z, t_complex c, int max_depth)
 {
 	int	depth;
 
@@ -28,7 +28,7 @@ int	calc_depth(t_complex z, t_complex c, int max_depth)
 	return (depth);
 }
 
-int	calc_depth_burning_ship(t_complex z, t_complex c, int max_depth)
+int	depth_burning_ship(t_complex z, t_complex c, int max_depth)
 {
 	int	depth;
 

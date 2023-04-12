@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_utils.h                                        :+:      :+:    :+:   */
+/*   param.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 22:27:30 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/11 01:50:54 by sshimizu         ###   ########.fr       */
+/*   Created: 2023/04/12 23:51:20 by sshimizu          #+#    #+#             */
+/*   Updated: 2023/04/12 23:52:13 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MLX_UTILS_H
-# define MLX_UTILS_H
+#ifndef PARAM_H
+# define PARAM_H
 
 # include <display.h>
 
-void		mlx_put_pixel_to_image(t_imginfo *imginfo, int x, int y,
-				unsigned int color);
+void	julia_re_plus(t_display *disp);
+void	julia_re_minus(t_display *disp);
+void	julia_im_plus(t_display *disp);
+void	julia_im_minus(t_display *disp);
 
 #endif

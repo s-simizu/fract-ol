@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_utils.c                                        :+:      :+:    :+:   */
+/*   depth.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 22:26:59 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/03/27 14:08:42 by sshimizu         ###   ########.fr       */
+/*   Created: 2023/04/12 19:38:18 by sshimizu          #+#    #+#             */
+/*   Updated: 2023/04/12 23:12:04 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <mlx_utils.h>
+#ifndef DEPTH_H
+# define DEPTH_H
 
-void	mlx_put_pixel_to_image(t_imginfo *imginfo, int x, int y,
-		unsigned int color)
-{
-	int		offset;
-	char	*dst;
+# include <ft_complex.h>
 
-	offset = y * imginfo->size_line + x * (imginfo->bits_per_pixel / CHAR_BIT);
-	dst = imginfo->addr + offset;
-	*(unsigned int *)dst = color;
-}
+int	depth(t_complex z, t_complex c, int max_depth);
+int	depth_burning_ship(t_complex z, t_complex c, int max_depth);
+
+#endif

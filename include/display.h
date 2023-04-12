@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:52:16 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/12 21:22:17 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:30:08 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,29 @@
 
 typedef struct s_imginfo
 {
-	void		*img;
-	char		*addr;
-	int			bits_per_pixel;
-	int			size_line;
-	int			endian;
-}				t_imginfo;
+	void			*img;
+	char			*addr;
+	int				bits_per_pixel;
+	int				size_line;
+	int				endian;
+}					t_imginfo;
 
 typedef struct s_display
 {
-	void		*mlx;
-	void		*win;
-	t_imginfo	imginfo;
-	int			width;
-	int			height;
-	int			max_depth;
-	double		zoom_level;
-	t_complex	center;
-	t_fractal	fractal;
-	t_complex	julia_param;
-	t_color		color;
-}				t_display;
+	void			*mlx;
+	void			*win;
+	t_imginfo		imginfo;
+	int				width;
+	int				height;
+	int				max_depth;
+	double			zoom_level;
+	t_complex		center;
+	t_fractal		fractal;
+	t_complex		julia_param;
+	unsigned int	color;
+}					t_display;
 
-void			init_display(t_display *disp);
-void			destroy_display(t_display *disp);
+void				init_display(t_display *disp);
+void				destroy_display(t_display *disp);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 10:46:37 by sshimizu          #+#    #+#              #
-#    Updated: 2023/04/12 21:00:09 by sshimizu         ###   ########.fr        #
+#    Updated: 2023/04/13 01:44:46 by sshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,10 @@ CFLAGS = -Wall -Wextra -Werror $(INCLUDE)
 INCLUDE = -Iinclude -Ilibft -Imlx -I/usr/X11/include
 LIB = -Llibft -lft -lm -Lmlx -lmlx_Darwin -L/usr/X11/lib -lX11 -lXext
 FLAMEWORK = -framework OpenGL -framework AppKit
+LIBFT_DIR = libft/
 LIBFT = libft.a
 
-SRCS = calc.c color.c complex.c display.c draw.c event.c main.c mlx_utils.c move.c zoom.c
+SRCS = arg.c color.c complex.c depth.c display.c draw.c event.c main.c move.c param.c zoom.c
 OBJS = $(SRCS:.c=.o)
 
 VPATH = libft include mlx src
@@ -27,31 +28,27 @@ VPATH = libft include mlx src
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(LIB) $(FLAMEWORK) $^ -o $@
+	$(CC) $(CFLAGS) $(LIB) $(FLAMEWORK) $(OBJS) $(LIBFT_DIR)$(LIBFT) -o $@
+
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR)
 
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
+arg.c: display.h fractal.h libft.h
+color.c: color.h display.h draw.h
 complex.c: ft_complex.h
+depth.c: ft_complex.h
 display.c: display.h ft_complex.h libft.h mlx.h
-draw.c: calc.c color.h display.h fractal.h mlx.h mlx_utils.h
-event.c: display.h move.h zoom.h
-main.c: display.h event.h fractal.h mlx.h mlx_utils.h
-mandelbrot.c: ft_complex.h mlx_utils.h
+draw.c: color.h depth.h display.h fractal.h mlx.h
+event.c: color.h display.h move.h param.h zoom.h
+main.c: arg.h display.h draw.h event.h fractal.h mlx.h
 move.c: display.h draw.h
 zoom.c: draw.h ft_complex.h
 
-test: test.o
-	$(CC) $^ -Lmlx -lmlx_Darwin -L/usr/X11/lib -lX11 -lXext -framework OpenGL -framework AppKit -o $@
-
-testm: test_mandelbrot.o mlx_utils.o mandelbrot.o complex.o display.o $(LIBFT)
-	$(CC) $^ -Lmlx -lmlx_Darwin -L/usr/X11/lib -lX11 -lXext -Llibft -lft -framework OpenGL -framework AppKit -o $@
-
-$(LIBFT):
-	$(MAKE) -C libft/
-
 clean:
-	$(MAKE) fclean -C libft/
+	$(MAKE) fclean -C $(LIBFT_DIR)
 	rm -f $(OBJS)
 
 fclean: clean

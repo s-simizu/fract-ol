@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calc.h                                             :+:      :+:    :+:   */
+/*   arg.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 19:38:18 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/12 19:55:39 by sshimizu         ###   ########.fr       */
+/*   Created: 2023/04/13 00:20:48 by sshimizu          #+#    #+#             */
+/*   Updated: 2023/04/13 01:02:39 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CALC_H
-# define CALC_H
+#ifndef ARG_H
+# define ARG_H
 
-# include <ft_complex.h>
+# include <display.h>
 
-int	calc_depth(t_complex z, t_complex c, int max_depth);
-int	calc_depth_burning_ship(t_complex z, t_complex c, int max_depth);
+void	print_usage(void);
+void	set_fractal_info(t_display *disp, char *str);
 
 #endif

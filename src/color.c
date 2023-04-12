@@ -6,32 +6,75 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:36:38 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/12 21:29:30 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:39:38 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <color.h>
+#include <display.h>
+#include <draw.h>
 #include <math.h>
 
-#define BRACK 0x00000000
-#define WHITE 0x00FFFFFF
-#define RED 0x00FF0000
-#define GREEN 0x0000FF00
-#define BRUE 0x000000FF
-
-t_color	get_red(double brightness)
+static unsigned int	change_brightness(unsigned int color, double depth_ratio)
 {
-	if (brightness > 1.0)
-		brightness = 1.0;
-	return ((unsigned char)(0xFF * brightness) << 16);
+	unsigned int	rgb[3];
+
+	if (depth_ratio > 1.0)
+		depth_ratio = 1.0;
+	rgb[0] = (color >> 16) * depth_ratio;
+	rgb[1] = ((color >> 8) & 0xFF) * depth_ratio;
+	rgb[2] = (color & 0xFF) * depth_ratio;
+	return (rgb[0] << 16 | rgb[1] << 8 | rgb[2]);
 }
 
-t_color	get_color(int depth, int max_depth)
+unsigned int	get_color(t_display *disp, int depth, int max_depth)
 {
-	double	brightness;
+	double	depth_ratio;
 
-	brightness = log(depth) / log(max_depth);
-	if (brightness == 1.0 || brightness < 0.2)
-		return (BRACK);
-	return (get_red(brightness));
+	depth_ratio = log(depth) / log(max_depth);
+	if (depth_ratio == 1.0 || depth_ratio == 0)
+		return (BLACK);
+	return (change_brightness(disp->color, depth_ratio));
+}
+
+void	change_red(t_display *disp)
+{
+	unsigned int	red;
+
+	red = disp->color >> 16;
+	if (red == 0x00)
+		disp->color |= 0x00800000;
+	else if (red == 0x80)
+		disp->color |= 0x00FF0000;
+	else if (red == 0xFF)
+		disp->color &= 0x0000FFFF;
+	draw(disp);
+}
+
+void	change_green(t_display *disp)
+{
+	unsigned int	green;
+
+	green = (disp->color >> 8) & 0xFF;
+	if (green == 0x00)
+		disp->color |= 0x00008000;
+	else if (green == 0x80)
+		disp->color |= 0x0000FF00;
+	else if (green == 0xFF)
+		disp->color &= 0x00FF00FF;
+	draw(disp);
+}
+
+void	change_blue(t_display *disp)
+{
+	unsigned int	blue;
+
+	blue = disp->color & 0xFF;
+	if (blue == 0x00)
+		disp->color |= 0x00000080;
+	else if (blue == 0x80)
+		disp->color |= 0x000000FF;
+	else if (blue == 0xFF)
+		disp->color &= 0x00FFFF00;
+	draw(disp);
 }
