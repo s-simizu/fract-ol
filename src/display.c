@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:47:39 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/12 21:37:45 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:48:21 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 #define HEIGHT 300
 #define INITIAL_MAX_DEPTH 100
 #define INITIAL_ZOOM_LEVEL 1.0
-#define DEFAULT_CENTER_RE -0.5
-#define DEFAULT_CENTER_IM 0.0
 
 void	destroy_display(t_display *disp)
 {
@@ -32,7 +30,7 @@ void	destroy_display(t_display *disp)
 	if (disp->win)
 		mlx_destroy_window(disp->mlx, disp->win);
 	mlx_destroy_display(disp->mlx);
-	exit(1);
+	exit(0);
 }
 
 void	init_display(t_display *disp)
@@ -54,5 +52,4 @@ void	init_display(t_display *disp)
 	disp->height = HEIGHT;
 	disp->max_depth = INITIAL_MAX_DEPTH;
 	disp->zoom_level = INITIAL_ZOOM_LEVEL;
-	disp->center = (t_complex){DEFAULT_CENTER_RE, DEFAULT_CENTER_IM};
 }
