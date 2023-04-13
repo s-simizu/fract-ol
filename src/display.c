@@ -57,7 +57,10 @@ static void	set_display_size(t_display *disp, char *disp_size)
 		disp->height = L_HEIGHT;
 	}
 	else
+	{
 		print_usage();
+		destroy_display(disp);
+	}
 }
 
 void	init_display(t_display *disp, char *disp_size)
