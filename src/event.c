@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 13:56:46 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 10:47:28 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/13 14:02:16 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ static void	move(int keycode, t_display *disp)
 		move_left(disp);
 	else if (keycode == XK_Right)
 		move_right(disp);
-	else if (keycode == XK_Escape)
-		destroy_display(disp);
 }
 
 static void	change_param(int keycode, t_display *disp)
@@ -65,11 +63,5 @@ int	key_event(int keycode, t_display *disp)
 	change_param(keycode, disp);
 	if (keycode == XK_Escape)
 		destroy_display(disp);
-	return (0);
-}
-
-int	close_event(t_display *disp)
-{
-	destroy_display(disp);
 	return (0);
 }
