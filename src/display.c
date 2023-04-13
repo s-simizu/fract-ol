@@ -46,12 +46,12 @@ static void	set_display_size(t_display *disp, char *disp_size)
 		disp->width = S_WIDTH;
 		disp->height = S_HEIGHT;
 	}
-	if (ft_strncmp(disp_size, "m", 2) == 0)
+	else if (ft_strncmp(disp_size, "m", 2) == 0)
 	{
 		disp->width = M_WIDTH;
 		disp->height = M_HEIGHT;
 	}
-	if (ft_strncmp(disp_size, "l", 2) == 0)
+	else if (ft_strncmp(disp_size, "l", 2) == 0)
 	{
 		disp->width = L_WIDTH;
 		disp->height = L_HEIGHT;
