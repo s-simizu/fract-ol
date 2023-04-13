@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:52:16 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 01:30:08 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/13 10:30:51 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct s_display
 	unsigned int	color;
 }					t_display;
 
-void				init_display(t_display *disp);
+void				init_display(t_display *disp, char *disp_size);
 void				destroy_display(t_display *disp);
 
 #endif

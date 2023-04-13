@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 13:56:46 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 00:38:59 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/13 10:47:28 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	mouse_event(int button, int x, int y, t_display *disp)
 	return (0);
 }
 
-void	set_move(int keycode, t_display *disp)
+static void	move(int keycode, t_display *disp)
 {
 	if (keycode == XK_Up)
 		move_up(disp);
@@ -41,7 +41,7 @@ void	set_move(int keycode, t_display *disp)
 		destroy_display(disp);
 }
 
-void	set_change_param(int keycode, t_display *disp)
+static void	change_param(int keycode, t_display *disp)
 {
 	if (keycode == XK_r)
 		change_red(disp);
@@ -61,8 +61,10 @@ void	set_change_param(int keycode, t_display *disp)
 
 int	key_event(int keycode, t_display *disp)
 {
-	set_move(keycode, disp);
-	set_change_param(keycode, disp);
+	move(keycode, disp);
+	change_param(keycode, disp);
+	if (keycode == XK_Escape)
+		destroy_display(disp);
 	return (0);
 }
 

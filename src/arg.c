@@ -6,15 +6,16 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 00:11:21 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 01:44:34 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/13 10:43:40 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <color.h>
 #include <display.h>
 #include <fractal.h>
 #include <libft.h>
 
-#define INITIAL_COLOR 0x00FF0000
+#define INITIAL_COLOR RED
 
 #define INITIAL_JULIA_PARAM_RE -0.3
 #define INITIAL_JULIA_PARAM_IM -0.63
@@ -28,10 +29,15 @@
 
 void	print_usage(void)
 {
-	ft_printf("usage: fractol [FRACTAL_TYPE]\n");
-	ft_printf("   j: julia set\n");
-	ft_printf("   m: mandelbrot set\n");
-	ft_printf("   b: burning ship\n");
+	ft_printf("usage: fractol [FRACTAL_TYPE] [DISPLAY_SIZE]\n");
+	ft_printf("  FRACTAL_TYPE\n");
+	ft_printf("    j: julia set\n");
+	ft_printf("    m: mandelbrot set\n");
+	ft_printf("    b: burning ship\n");
+	ft_printf("  DISPLAY_SIZE\n");
+	ft_printf("    s: 480 x 272\n");
+	ft_printf("    m: 800 x 480\n");
+	ft_printf("    l: 1280 x 720\n");
 }
 
 static void	set_julia_info(t_display *disp)

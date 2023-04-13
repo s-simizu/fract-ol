@@ -6,18 +6,24 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:47:39 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 01:48:21 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/13 10:36:38 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <arg.h>
 #include <display.h>
 #include <ft_complex.h>
 #include <libft.h>
 #include <mlx.h>
 #include <stdlib.h>
 
-#define WIDTH 500
-#define HEIGHT 300
+#define S_WIDTH 480
+#define S_HEIGHT 272
+#define M_WIDTH 800
+#define M_HEIGHT 480
+#define L_WIDTH 1280
+#define L_HEIGHT 720
+
 #define INITIAL_MAX_DEPTH 100
 #define INITIAL_ZOOM_LEVEL 1.0
 
@@ -33,23 +39,45 @@ void	destroy_display(t_display *disp)
 	exit(0);
 }
 
-void	init_display(t_display *disp)
+static void	set_display_size(t_display *disp, char *disp_size)
+{
+	if (ft_strncmp(disp_size, "s", 2) == 0)
+	{
+		disp->width = S_WIDTH;
+		disp->height = S_HEIGHT;
+	}
+	if (ft_strncmp(disp_size, "m", 2) == 0)
+	{
+		disp->width = M_WIDTH;
+		disp->height = M_HEIGHT;
+	}
+	if (ft_strncmp(disp_size, "l", 2) == 0)
+	{
+		disp->width = L_WIDTH;
+		disp->height = L_HEIGHT;
+	}
+	else
+		print_usage();
+}
+
+void	init_display(t_display *disp, char *disp_size)
 {
 	ft_bzero(disp, sizeof(t_display));
 	disp->mlx = mlx_init();
 	if (!disp->mlx)
 		destroy_display(disp);
-	disp->win = mlx_new_window(disp->mlx, WIDTH, HEIGHT, "fract-ol");
+	set_display_size(disp, disp_size);
+	disp->win = mlx_new_window(disp->mlx, disp->width, disp->height,
+			"fract-ol");
 	if (!disp->win)
 		destroy_display(disp);
-	disp->imginfo.img = mlx_new_image(disp->mlx, WIDTH, HEIGHT);
+	disp->imginfo.img = mlx_new_image(disp->mlx, disp->width, disp->height);
 	if (!disp->imginfo.img)
 		destroy_display(disp);
 	disp->imginfo.addr = mlx_get_data_addr(disp->imginfo.img,
-			&disp->imginfo.bits_per_pixel, &disp->imginfo.size_line,
+			&disp->imginfo.bits_per_pixel,
+			&disp->imginfo.size_line,
 			&disp->imginfo.endian);
-	disp->width = WIDTH;
-	disp->height = HEIGHT;
 	disp->max_depth = INITIAL_MAX_DEPTH;
 	disp->zoom_level = INITIAL_ZOOM_LEVEL;
 }

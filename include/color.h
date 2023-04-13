@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:35:11 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 00:01:38 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/13 10:43:10 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include <display.h>
 
 # define BLACK 0x00000000
+# define WHITE 0x00FFFFFF
+# define RED 0x00FF0000
+# define GREEN 0x0000FF00
+# define BLUE 0x000000FF
 
 typedef struct s_display	t_display;
 

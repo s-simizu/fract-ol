@@ -6,7 +6,7 @@
 #    By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/14 10:46:37 by sshimizu          #+#    #+#              #
-#    Updated: 2023/04/13 02:07:22 by sshimizu         ###   ########.fr        #
+#    Updated: 2023/04/13 10:49:01 by sshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,11 +41,11 @@ $(LIBFT):
 %.o: %.c
 	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-arg.c: display.h fractal.h libft.h
+arg.c: color.h display.h fractal.h libft.h
 color.c: color.h display.h draw.h
 complex.c: ft_complex.h
 depth.c: ft_complex.h
-display.c: display.h ft_complex.h libft.h mlx.h
+display.c: arg.h display.h ft_complex.h libft.h mlx.h
 draw.c: color.h depth.h display.h fractal.h mlx.h
 event.c: color.h display.h move.h param.h zoom.h
 main.c: arg.h display.h draw.h event.h fractal.h mlx.h
