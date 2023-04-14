@@ -6,15 +6,15 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:47:39 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/14 13:31:38 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/15 07:20:52 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <arg.h>
-#include <display.h>
-#include <ft_complex.h>
-#include <libft.h>
-#include <mlx.h>
+#include "arg.h"
+#include "display.h"
+#include "ft_complex.h"
+#include "libft.h"
+#include "mlx.h"
 #include <stdlib.h>
 
 #define S_WIDTH 480

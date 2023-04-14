@@ -6,16 +6,16 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 13:25:08 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/14 00:54:28 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/15 07:21:20 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <color.h>
-#include <depth.h>
-#include <display.h>
-#include <fractal.h>
+#include "color.h"
+#include "depth.h"
+#include "display.h"
+#include "fractal.h"
+#include "mlx.h"
 #include <limits.h>
-#include <mlx.h>
 
 #define DEFAULT_RE_RANGE 4.0
 #define DEFAULT_IM_RANGE 2.4
@@ -79,11 +79,11 @@ static void	put_usage(t_display *disp)
 
 	margin = disp->height / 20;
 	mlx_string_put(disp->mlx, disp->win, margin, disp->height - margin * 3,
-		WHITE, "arrows : move");
+			WHITE, "arrows : move");
 	mlx_string_put(disp->mlx, disp->win, margin, disp->height - margin * 2,
-		WHITE, "r,g,b  : change color");
-	mlx_string_put(disp->mlx, disp->win, margin, disp->height - margin,
-		WHITE, "w,a,s,d: change julia parameter.");
+			WHITE, "r,g,b  : change color");
+	mlx_string_put(disp->mlx, disp->win, margin, disp->height - margin, WHITE,
+			"w,a,s,d: change julia parameter.");
 }
 
 void	draw(t_display *disp)

@@ -6,13 +6,13 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:36:38 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 01:39:38 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/15 07:20:04 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <color.h>
-#include <display.h>
-#include <draw.h>
+#include "color.h"
+#include "display.h"
+#include "draw.h"
 #include <math.h>
 
 static unsigned int	change_brightness(unsigned int color, double depth_ratio)

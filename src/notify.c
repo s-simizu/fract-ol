@@ -6,12 +6,12 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 13:26:20 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 14:01:18 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/15 07:22:45 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <display.h>
-#include <draw.h>
+#include "display.h"
+#include "draw.h"
 
 int	destroy_notify(t_display *disp)
 {

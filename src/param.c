@@ -6,12 +6,12 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 23:46:54 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 10:01:38 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/15 07:22:55 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <display.h>
-#include <draw.h>
+#include "display.h"
+#include "draw.h"
 
 #define ADJUSTMENT_AMOUNT 0.01
 

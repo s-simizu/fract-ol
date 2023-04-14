@@ -6,14 +6,14 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 00:11:21 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 10:43:40 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/15 07:18:11 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <color.h>
-#include <display.h>
-#include <fractal.h>
-#include <libft.h>
+#include "color.h"
+#include "display.h"
+#include "fractal.h"
+#include "libft.h"
 
 #define INITIAL_COLOR RED
 

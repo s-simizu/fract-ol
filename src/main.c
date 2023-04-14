@@ -6,18 +6,18 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:12:07 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 14:01:03 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/15 07:22:11 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "arg.h"
+#include "display.h"
+#include "draw.h"
+#include "event.h"
+#include "fractal.h"
+#include "mlx.h"
+#include "notify.h"
 #include <X11/Xlib.h>
-#include <arg.h>
-#include <display.h>
-#include <draw.h>
-#include <event.h>
-#include <fractal.h>
-#include <mlx.h>
-#include <notify.h>
 
 int	main(int argc, char *argv[])
 {

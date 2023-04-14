@@ -6,12 +6,12 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 10:59:02 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/12 19:41:05 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/15 07:22:37 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <display.h>
-#include <draw.h>
+#include "display.h"
+#include "draw.h"
 
 #define DEFAULT_MOVE_AMOUNT 0.2
 

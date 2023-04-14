@@ -6,12 +6,12 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 11:01:40 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 14:49:45 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/15 07:23:03 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <draw.h>
-#include <ft_complex.h>
+#include "draw.h"
+#include "ft_complex.h"
 
 #define ZOOM_FACTOR 0.9
 #define ZOOM_OUT_LIMIT 5.0

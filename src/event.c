@@ -6,17 +6,17 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 13:56:46 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 14:02:16 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/15 07:21:45 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "color.h"
+#include "display.h"
+#include "move.h"
+#include "param.h"
+#include "zoom.h"
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
-#include <color.h>
-#include <display.h>
-#include <move.h>
-#include <param.h>
-#include <zoom.h>
 
 int	mouse_event(int button, int x, int y, t_display *disp)
 {
