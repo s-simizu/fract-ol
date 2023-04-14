@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:47:39 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 10:36:38 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/14 13:31:38 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 void	destroy_display(t_display *disp)
 {
 	if (!disp || !disp->mlx)
-		return ;
+		exit(1);
 	if (disp->imginfo.img)
 		mlx_destroy_image(disp->mlx, disp->imginfo.img);
 	if (disp->win)
