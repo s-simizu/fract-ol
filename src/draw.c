@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 13:25:08 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/15 07:21:20 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/16 14:55:23 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,11 @@ static void	put_usage(t_display *disp)
 
 	margin = disp->height / 20;
 	mlx_string_put(disp->mlx, disp->win, margin, disp->height - margin * 3,
-			WHITE, "arrows : move");
+		WHITE, "arrows : move");
 	mlx_string_put(disp->mlx, disp->win, margin, disp->height - margin * 2,
-			WHITE, "r,g,b  : change color");
-	mlx_string_put(disp->mlx, disp->win, margin, disp->height - margin, WHITE,
-			"w,a,s,d: change julia parameter.");
+		WHITE, "r,g,b  : change color");
+	mlx_string_put(disp->mlx, disp->win, margin, disp->height - margin,
+		WHITE, "w,a,s,d: change julia parameter.");
 }
 
 void	draw(t_display *disp)
