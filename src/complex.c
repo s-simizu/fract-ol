@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:26:58 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/15 07:20:19 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/18 00:18:22 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_complex	complex_mul(t_complex c1, t_complex c2)
 	return (result);
 }
 
-double	complex_abs(t_complex c)
+double	complex_abs_square(t_complex c)
 {
-	return (sqrt(c.re * c.re + c.im * c.im));
+	return (c.re * c.re + c.im * c.im);
 }

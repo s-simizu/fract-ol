@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:25:14 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/13 00:04:29 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/18 00:21:08 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ typedef struct s_complex
 t_complex	complex_sum(t_complex c1, t_complex c2);
 t_complex	complex_sub(t_complex c1, t_complex c2);
 t_complex	complex_mul(t_complex c1, t_complex c2);
-double		complex_abs(t_complex c);
+double		complex_abs_square(t_complex c);
 
 #endif

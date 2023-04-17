@@ -6,7 +6,7 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 20:47:39 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/15 07:20:52 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/18 00:26:29 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,10 @@ static void	set_display_size(t_display *disp, char *disp_size)
 void	init_display(t_display *disp, char *disp_size)
 {
 	ft_bzero(disp, sizeof(t_display));
+	set_display_size(disp, disp_size);
 	disp->mlx = mlx_init();
 	if (!disp->mlx)
 		destroy_display(disp);
-	set_display_size(disp, disp_size);
 	disp->win = mlx_new_window(disp->mlx, disp->width, disp->height,
 			"fract-ol");
 	if (!disp->win)

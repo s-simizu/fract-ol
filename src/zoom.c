@@ -6,14 +6,14 @@
 /*   By: sshimizu <sshimizu@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 11:01:40 by sshimizu          #+#    #+#             */
-/*   Updated: 2023/04/15 07:23:03 by sshimizu         ###   ########.fr       */
+/*   Updated: 2023/04/18 00:37:12 by sshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "draw.h"
 #include "ft_complex.h"
 
-#define ZOOM_FACTOR 0.9
+#define ZOOM_FACTOR 0.875
 #define ZOOM_OUT_LIMIT 5.0
 
 void	zoom_in(t_display *disp, int x, int y)
